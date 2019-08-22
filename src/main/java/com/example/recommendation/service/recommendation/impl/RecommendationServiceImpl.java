@@ -2,7 +2,6 @@ package com.example.recommendation.service.recommendation.impl;
 
 import com.example.recommendation.data.dto.Product;
 import com.example.recommendation.data.dto.ProductType;
-import com.example.recommendation.data.dto.Profile;
 import com.example.recommendation.data.dto.Recommendation;
 import com.example.recommendation.service.product.ProductService;
 import com.example.recommendation.service.profile.ProfileService;
@@ -72,6 +71,17 @@ public class RecommendationServiceImpl implements RecommendationService {
             }
         }
     }
+
+    /**
+     * For realisation of recommendation  used coin change algorithm.
+     *
+     * @see <a href="https://habr.com/ru/post/109384 </a>
+     *
+     * @param maxAmount    for one type of products
+     * @param insuranceProducts    collection of products with type Insurance {@link ProductType}
+     * @param incomeProducts collection of products with type Income {@link ProductType}
+     * @return list of recommended products
+     */
 
     private List<Product> combine(BigDecimal maxAmount, List<Product> insuranceProducts, List<Product> incomeProducts) {
         List<Product> result = new ArrayList<>();

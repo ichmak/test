@@ -50,7 +50,7 @@ public class RecommendationControllerImplTest extends AbstractIntegrationTest {
     private ProductService productService;
 
     @Test
-    public void givenRequestWithoutParams_whenGet_thenOk() throws Exception {
+    public void givenRequestWithParams_whenGet_thenOk() throws Exception {
         //given
         Profile profile = profileFactory.create(DEFAULT_PRODUCT_RISK_CATEGORY);
 
